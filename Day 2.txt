@@ -1,0 +1,26 @@
+//Longest Consecutive subsequence//
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	        int arr[] = {7,1,5,9,13,6,12,7,11,14};
+	        int ans=1;
+		HashSet<Integer> box =new HashSet<>();
+		for(int i=0;i<arr.length;i++){
+		        box.add(arr[i]);
+		}
+		for(int i=0;i<arr.length;i++){
+		       int s = arr[i];
+
+		       if(box.contains(s-1)){
+		               continue;
+		       }
+		       while(box.contains(s)){
+		               s++;
+		       }
+		       ans= Math.max(ans,s-arr[i]);
+		}
+	 System.out.println(ans);
+	}
+}
