@@ -24,7 +24,7 @@ public class Main
 	 System.out.println(ans);
 	}
 }
-// Majority element by Hashmat
+// Majority element by Hashmap//
 
 import java.util.*;
 public class Main
@@ -45,6 +45,46 @@ public class Main
 		        }
 		}
                 System.out.println(count);
+
+
+	}
+}
+
+// Majority element by Moore voting algo//
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	        int arr[] = {2,4,5,5,2,2,6};
+		int f =0,votes=0;
+		int candidate = arr[0];
+		for(int i=1;i<arr.length;i++){
+		        if(candidate == arr[i]){
+		                votes++;
+		        }
+		        else{
+		                votes--;
+		        }
+		        if(votes == 0){
+		                candidate = arr[i];
+		                votes =1;
+		        }
+		   
+		}
+		 for(int i=0;i<arr.length;i++){
+		                if(arr[i] ==candidate){
+		                        f++;
+		                }
+		        }
+		        if(f>arr.length/2){
+		                System.out.println(candidate);
+		        }
+                        else{
+                             System.out.println(-1);    
+                        }
+               
 
 
 	}
