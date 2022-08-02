@@ -24,3 +24,28 @@ public class Main
 	 System.out.println(ans);
 	}
 }
+// Majority element by Hashmat
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	        int arr[] = {2,4,2,5,2,2,6};
+		HashMap<Integer,Integer> box =new HashMap<>();
+		for(int i=0;i<arr.length;i++){
+		        box.put(arr[i],0);
+		}
+		
+                int count = 0;
+
+		for(int i=0;i<arr.length;i++){
+		        box.put(arr[i],box.get(arr[i])+1);
+		        if(box.get(arr[i]) >arr.length/2){
+		                count = arr[i];
+		        }
+		}
+                System.out.println(count);
+
+
+	}
+}
