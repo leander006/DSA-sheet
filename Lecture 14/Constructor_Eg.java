@@ -55,12 +55,12 @@ class student {
       }
 
       // Deep constructor
-      student(student s1) {
-            marks = new int[3];
-            this.name = s1.name;
-            this.password = s1.password;
-            for (int i = 0; i < marks.length; i++) {
-                  this.marks[i] = s1.marks[i];
-            }
-      }
+      // student(student s1) {
+      // marks = new int[3];
+      // this.name = s1.name;
+      // this.password = s1.password;
+      // for (int i = 0; i < marks.length; i++) {
+      // this.marks[i] = s1.marks[i];
+      // }
+      // }
 }
