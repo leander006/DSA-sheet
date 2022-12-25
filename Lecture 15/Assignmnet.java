@@ -56,13 +56,25 @@ public class Assignmnet {
             tower_of_hanoi(n - 1, h, s, d);
       }
 
+      public static void string_reverse(String s, int i) {
+            if (i == 0) {
+                  System.out.println(s.charAt(i));
+                  return;
+            }
+            System.out.print(s.charAt(i));
+            string_reverse(s, i - 1);
+      }
+
       public static void main(String[] args) {
             int arr[] = { 3, 2, 4, 5, 6, 2, 7, 2, 2 };
-            String str = "aba";
+            String str = "abcab";
+            String str1 = "abac";
             range(arr, 0, 2);
             convert(2021);
             System.out.println(length(new String("abcdefg"), 0));
             System.out.println(sub_string_count(str, 0, str.length() - 1, str.length()));
             tower_of_hanoi(3, "A", "B", "C");
+            string_reverse(str1, str1.length() - 1);
+
       }
 }
