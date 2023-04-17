@@ -48,9 +48,7 @@ class Assisgnment {
     public static void assis3(ArrayList<job> arr){
             int n = arr.size();
             Collections.sort(arr, (a, b) -> {return b.profit - a.profit;});
-            // for(int i =0;i<n;i++){
-            //       System.out.print(arr.get(i).job_id+" ");
-            // }
+
             int max=0;
             for(int i=0;i<n;i++){
                   if(arr.get(i).deadline >max){
@@ -68,12 +66,13 @@ class Assisgnment {
                               res[j] =arr.get(i).job_id;
                               countJob++;
                               profit +=arr.get(i).profit;
+                              // System.out.print(" i "+ i +" "+ "j " +j);
                               break;
                         }
                   }
             }
             for(int i=0;i<n+1;i++){
-                  System.out.print(res[i]+" ");
+                  System.out.print(res[i]);
             }
     }
 
@@ -131,7 +130,7 @@ class Assisgnment {
             q.add(90);
             q.add(100);
             ArrayList<job> arr = new ArrayList<job>();
-            arr.add(new job('a', 4, 20));arr.add(new job('b', 1, 10));arr.add(new job('c', 1, 20));arr.add(new job('d', 1, 30));
+            arr.add(new job('a', 20, 4));arr.add(new job('b', 10, 1));arr.add(new job('c', 40, 1));arr.add(new job('d', 30, 1));
            assis3(arr);
             // System.out.print(assis2(res));
             // while(!q.isEmpty()){
