@@ -7,15 +7,13 @@ public class Sum_array {
                         int sum = 0;
                         for (int k = i; k <= j; k++) {
                               sum += num[k];
-                              System.out.print(num[k] + " ");
                         }
-                        System.out.println("Sum is " + sum);
                         if (max < sum) {
                               max = sum;
                         }
 
                   }
-                  System.out.println("Max is " + max);
+                  // System.out.println("Max is " + max);
             }
       }
 

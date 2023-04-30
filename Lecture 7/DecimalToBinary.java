@@ -9,6 +9,7 @@ public class DecimalToBinary {
                   bin += (int) binNum * Math.pow(10, count);
                   count++;
                   n = n / 2;
+                  System.out.print("n"+n +' ');
             }
             return bin;
       }

@@ -13,6 +13,15 @@ public class Pattern {
             }
       }
 
+      public static void print(int n){
+            for(int i=1;i<=n;i++){
+                  for(int j=1;j<=i;j++){
+                        System.out.print(j);
+                  }
+                  System.out.println("");
+            }
+      }
+
       public static void inverted_half_pyramind(int n) {
             for (int i = 1; i <= n; i++) {
                   for (int j = 1; j <= n - i; j++) {
@@ -148,5 +157,6 @@ public class Pattern {
             solid_Rhombus(5);
             hollow_Rhombus(5);
             daimond(9);
+            print(4);
       }
 }
