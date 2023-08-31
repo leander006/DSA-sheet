@@ -90,7 +90,7 @@ public class Sorting {
       }
 
       public static void main(String[] args) {
-            int num[] = { 2, 3, 1, 4, 16, 9 };
+            int num[] = { -2 ,1, 2 ,-1, 0 };
             // buble_sort(num);
             // selection_sort(num);
             // insertion(num);

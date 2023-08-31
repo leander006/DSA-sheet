@@ -18,33 +18,58 @@ public class Merge_sort {
             merge(a, s, mid, e);
       }
 
-      public static void merge(int a[], int s, int mid, int e) {
-            int temp[] = new int[e - s + 1];
-            int i = s, j = mid + 1, k = 0;
-
-            while (i <= s && j <= e) {
-                  if (a[i] < a[j]) {
-                        temp[k] = a[i];
-                        i++;
-                  } else {
-                        temp[k] = a[j];
-                        j++;
-                  }
-                  k++;
+      public static void merge(int arr[], int l, int m, int r)
+    {
+        // Find sizes of two subarrays to be merged
+        int n1 = m - l + 1;
+        int n2 = r - m;
+ 
+        // Create temp arrays
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+ 
+        // Copy data to temp arrays
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[l + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[m + 1 + j];
+ 
+        // Merge the temp arrays
+ 
+        // Initial indices of first and second subarrays
+        int i = 0, j = 0;
+ 
+        // Initial index of merged subarray array
+        int k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
             }
-            while (i <= mid) {
-                  temp[k++] = a[i++];
+            else {
+                arr[k] = R[j];
+                j++;
             }
-            while (j <= e) {
-                  temp[k++] = a[j++];
-            }
-            for (k = 0, i = s; k < temp.length; k++, i++) {
-                  a[i] = temp[k];
-            }
-      }
+            k++;
+        }
+ 
+        // Copy remaining elements of L[] if any
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+ 
+        // Copy remaining elements of R[] if any
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
 
       public static void main(String[] args) {
-            int arr[] = { 6, 4, 7, 8, 1, 9, 2 };
+            int arr[] = { 10, 25, -12, -6, 20,20  };
             print_array(arr);
             merge_sort(arr, 0, arr.length - 1);
             print_array(arr);
