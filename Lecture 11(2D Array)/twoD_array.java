@@ -4,33 +4,46 @@ public class twoD_array {
 
       public static void print_spiral(int arr[][]) {
             int startRow = 0, startCol = 0, endRow = arr.length - 1, endCol = arr[0].length - 1;
+            int temp[] = new int[arr.length* arr[0].length];
+            int ind=0;
             while (startRow <= endRow && startCol <= endCol) {
                   // top
                   for (int j = startCol; j <= endCol; j++) {
-                        System.out.print(arr[startRow][j] + " ");
+                        // System.out.print(arr[startRow][j] + " ");
+                        temp[ind] = arr[startRow][j];
+                        ind++;
                   }
                   // right
                   for (int i = startRow + 1; i <= endRow; i++) {
-                        System.out.print(arr[i][endCol] + " ");
+                        // System.out.print(arr[i][endCol] + " ");
+                        temp[ind] = arr[i][endCol];
+                        ind++;                        
                   }
                   // bottom
                   for (int j = endCol - 1; j >= startCol; j--) {
                         if (startRow == endRow) {
                               break;
                         }
-                        System.err.print(arr[endRow][j] + " ");
+                        // System.err.print(arr[endRow][j] + " ");
+                        temp[ind] = arr[endRow][j];
+                        ind++;                         
                   }
                   // left
                   for (int i = endRow - 1; i >= startRow + 1; i--) {
                         if (startCol == endCol) {
                               break;
                         }
-                        System.out.print(arr[i][startCol] + " ");
+                        // System.out.print(arr[i][startCol] + " ");
+                        temp[ind] = arr[i][startCol];
+                        ind++;                            
                   }
                   startCol++;
                   startRow++;
                   endCol--;
                   endRow--;
+            }
+            for(int jk=0;jk<temp.length;jk++){
+                  System.out.print(temp[jk]);
             }
       }
 
@@ -128,12 +141,12 @@ public class twoD_array {
             // int res = largest(arr);
             // System.out.println("The largest number in 2 D array is " + res);
             int arr[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
-            int arr1[][] = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
-            // print_spiral(arr);
-            array(arr);
-            boolean res = staircase_search(arr, 9);
+            // int arr1[][] = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
+            print_spiral(arr);
+            // array(arr);
+            // boolean res = staircase_search(arr, 9);
             // System.out.println("The Sum in 2 D array is " + res);
-            System.out.println("The element in 2 D array is present " + res);
+            // System.out.println("The element in 2 D array is present " + res);
 
       }
 }

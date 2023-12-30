@@ -21,7 +21,7 @@ public class Trapping_rain_water {
       }
 
       public static void main(String[] args) {
-            int num[] = { 4, 2, 0, 6, 3, 2, 5 };
+            int num[] = { 1,8,6,2,5,4,8,3,7 };
 
             int res = rainWater(num);
             System.out.println("Max trapped water is " + res);

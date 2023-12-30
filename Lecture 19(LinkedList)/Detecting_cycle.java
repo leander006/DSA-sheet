@@ -104,6 +104,6 @@ public class Detecting_cycle {
             System.out.println(cycle());
             delete_cycle();
             System.out.println(cycle());
-            printLl();
+            // printLl();
       }
 }
